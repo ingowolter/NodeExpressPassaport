@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 Esse código foi utilizado para a criação do curso [Autenticação com Node.js e Passport - Token](https://www.schoolofnet.com/curso/nodejs/outros-frameworks-nodejs/autenticacao-com-nodejs-e-passport-token/) da School of Net.
@@ -11,3 +12,6 @@ Blog da School of Net - [https://blog.schoolofnet.com](https://blog.schoolofnet.
 SONCast - Podcast da School of Net - [https://podcast.schoolofnet.com](https://podcast.schoolofnet.com)
 
 Canal da School of Net no Youtube: [http://www.youtube.com/c/SchoolofNetCursos](http://www.youtube.com/c/SchoolofNetCursos)
+=======
+# auth-node-express
+>>>>>>> 0a885037a61764b25244c17b6bc0b1bab1958049

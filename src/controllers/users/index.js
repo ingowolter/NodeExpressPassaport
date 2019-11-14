@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const criteriaCreate = require('../../interfaces/create')
-const criteriaRemove = require('../../interfaces/remove')
-const criteriaToken = require('../../interfaces/token')
-const validate = require('../../interfaces')
+const criteriaCreate = require('../../views/interfaces/create')
+const criteriaRemove = require('../../views/interfaces/remove')
+const criteriaToken = require('../../views/interfaces/token')
+const validate = require('../../views/interfaces')
 
 module.exports = (passport) => {
     router.get('/me', passport.authenticate('token', { session: false }), require('./me'))

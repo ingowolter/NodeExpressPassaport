@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const bcrypt = require('bcrypt-node')
 
 const User = new mongoose.Schema({
     name:{
@@ -14,5 +15,9 @@ const User = new mongoose.Schema({
         required: true
     }
 })
+
+User.methods.hashPassword = function(password, cb){
+    return bcrypt.hash(password, bcrypt.genSaltSync(8), null, cb)
+}
 
 module.exports = mongoose.model('User', User)

@@ -1,19 +1,21 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const mongoose = require('mongoose')
 const morgan = require('morgan')
-
+const mongoose = require('mongoose')
+const passport = require('passport')
 const app = express()
 
+require('./src/routes/users/auth')(passport)
 app.use(morgan('dev'))
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+app.use(passport.initialize())
 
-mongoose.connect('mongodb://localhost:27017/auth_token', {usreMongoClient: true })
+require('./src/index')(app, passport)
+
+mongoose.connect('mongodb://localhost:27017/auth_token', { useMongoClient: true })
 mongoose.Promise = global.Promise
 
-require('./src/index')(app)
-
-app.listen(9000, ()=>{
-    console.log('Express has benn started...')
-});
+app.listen(9000, () => {
+    console.log('Express has been started')
+})
